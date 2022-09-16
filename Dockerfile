@@ -4,7 +4,7 @@ ENV OPEN_JDK_VERSION 8
 ENV JAVA_HOME  /usr/lib/jvm/java-${OPEN_JDK_VERSION}-openjdk-amd64
 
 RUN echo "deb http://ftp.us.debian.org/debian stretch main" >> /etc/apt/sources.list && \
-    && apt-get update \
+    apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
