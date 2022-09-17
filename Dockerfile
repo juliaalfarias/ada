@@ -13,8 +13,8 @@ RUN echo 'deb http://ftp.debian.org/debian stretch-backports main' | tee /etc/ap
 
 RUN apt-get update --yes && \
     apt-get install --yes --no-install-recommends \
-    openjdk-8-jre-headless \
-    ca-certificates-java && \
+    openjdk-8-jdk-headless=8u162 \
+    ca-certificates-java=20220905 && \
     update-ca-certificates -f && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
