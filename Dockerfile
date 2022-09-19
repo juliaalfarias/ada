@@ -5,8 +5,8 @@ RUN echo "deb http://ftp.us.debian.org/debian stretch main" >> /etc/apt/sources.
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install -U pip setuptools
+RUN python3 -m pip3 install --upgrade pip
+RUN python3 -m pip3 install -U pip setuptools
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN echo 'deb http://ftp.debian.org/debian stretch-backports main' | tee /etc/apt/sources.list.d/stretch-backports.list
