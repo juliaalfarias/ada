@@ -3,7 +3,7 @@ FROM python:3.7
 # ENV OPEN_JDK_VERSION 8
 # ENV JAVA_HOME  /usr/lib/jvm/java-${OPEN_JDK_VERSION}-openjdk-amd64
 
-RUN python3 -m pip install --upgrade pip
+RUN python3 -m pip install --upgrade pip3
 
 RUN echo "deb http://ftp.us.debian.org/debian stretch main" >> /etc/apt/sources.list && \
     apt-get update \
