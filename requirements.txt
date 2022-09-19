@@ -1,3 +1,4 @@
+setuptools-rust==1.5.1
 cryptography==38.0.1
 Flask==2.0.3
 Flask_RESTful==0.3.9
