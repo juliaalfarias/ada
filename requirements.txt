@@ -1,6 +1,6 @@
-#setuptools==65.3.0
-setuptools-rust==1.1.2
-cryptography==38.0.1
+# setuptools==65.3.0
+# setuptools-rust==1.1.2
+# cryptography==38.0.1
 Flask==2.0.3
 Flask_RESTful==0.3.9
 Jinja2==3.0.2

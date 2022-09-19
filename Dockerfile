@@ -11,6 +11,8 @@ FROM python:3.7
 # RUN python -m pip install --upgrade pip
 # RUN python -m pip install --upgrade setuptools==41.2.0
 
+RUN pip install cryptography==38.0.1
+
 RUN mkdir app
 
 COPY app.py app/app.py
