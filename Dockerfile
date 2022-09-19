@@ -3,7 +3,8 @@ FROM python:3.7
 # ENV OPEN_JDK_VERSION 8
 # ENV JAVA_HOME  /usr/lib/jvm/java-${OPEN_JDK_VERSION}-openjdk-amd64
 
-RUN python3 -m pip install --upgrade pip3
+RUN python3 -m pip install --upgrade pip
+RUN pip install --upgrade setuptools
 
 RUN echo "deb http://ftp.us.debian.org/debian stretch main" >> /etc/apt/sources.list && \
     apt-get update \
@@ -26,7 +27,7 @@ COPY app.py app/app.py
 COPY models/ app/models/
 COPY requirements.txt requirements.txt
 
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 
 EXPOSE 7000
 
