@@ -1,12 +1,5 @@
 FROM python:3.7
 
-# ENV OPEN_JDK_VERSION 8
-# ENV JAVA_HOME  /usr/lib/jvm/java-${OPEN_JDK_VERSION}-openjdk-amd64
-
-RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install --upgrade setuptools
-#RUN python3 -m pip install --upgrade setuptools-rust
-
 RUN echo "deb http://ftp.us.debian.org/debian stretch main" >> /etc/apt/sources.list && \
     apt-get update \
     && apt-get clean \
@@ -15,12 +8,8 @@ RUN echo "deb http://ftp.us.debian.org/debian stretch main" >> /etc/apt/sources.
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN echo 'deb http://ftp.debian.org/debian stretch-backports main' | tee /etc/apt/sources.list.d/stretch-backports.list
 
-# RUN apt-get update --yes && \
-#     apt-get install --yes --no-install-recommends \
-#     openjdk-8-jdk-headless=8u162 \
-#     ca-certificates-java=20220905 && \
-#     update-ca-certificates -f && \
-#     apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN python3 -m pip install --upgrade pip
+RUN python3 -m pip install -U pip setuptools
 
 RUN mkdir app
 
