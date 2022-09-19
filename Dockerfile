@@ -5,7 +5,7 @@ FROM python:3.7
 
 RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install --upgrade setuptools
-RUN python3 -m pip install --upgrade setuptools-rust
+#RUN python3 -m pip install --upgrade setuptools-rust
 
 RUN echo "deb http://ftp.us.debian.org/debian stretch main" >> /etc/apt/sources.list && \
     apt-get update \
