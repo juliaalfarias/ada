@@ -5,3 +5,4 @@ Jinja2==3.0.2
 jinjasql==0.1.8
 pandas==1.0.1
 psycopg2==2.7.7
+setuptools-rust==1.5.1
