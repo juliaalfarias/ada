@@ -44,7 +44,6 @@ def authentication_layer() -> bool:
     token = headers.get("api_key")
 
     app.logger.info(token)
-    app.logger.info(os.getenv("API_KEY"))
 
     if not token:
         raise UnauthorizedException
@@ -71,9 +70,6 @@ def retrieve_data_from_scheduling(
     }
 
     query = build_query(**params)
-
-    app.logger.info(os.getenv("DATABASE"))
-    app.logger.info(os.getenv("HOST"))
 
     try:
         conn = pg.connect(
