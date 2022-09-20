@@ -1,5 +1,6 @@
 import os
 import json
+import logging
 import pandas as pd
 from pandas.core.frame import DataFrame
 import psycopg2 as pg
@@ -42,6 +43,9 @@ def authentication_layer() -> bool:
     headers = request.headers
     token = headers.get("api_key")
 
+    logging.info(token)
+    logging.info(os.getenv("API_KEY"))
+
     if not token:
         raise UnauthorizedException
 
@@ -67,6 +71,9 @@ def retrieve_data_from_scheduling(
     }
 
     query = build_query(**params)
+
+    logging.info(os.getenv("DATABASE"))
+    logging.info(os.getenv("HOST"))
 
     try:
         conn = pg.connect(
