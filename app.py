@@ -1,6 +1,5 @@
 import os
 import json
-import logging
 import pandas as pd
 from pandas.core.frame import DataFrame
 import psycopg2 as pg
