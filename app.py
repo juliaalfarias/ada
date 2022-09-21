@@ -43,8 +43,6 @@ def authentication_layer() -> bool:
     headers = request.headers
     token = headers.get("api_key")
 
-    app.logger.info(token)
-
     if not token:
         raise UnauthorizedException
 
