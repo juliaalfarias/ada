@@ -76,6 +76,10 @@ def retrieve_data_from_scheduling(
             password=os.getenv("PASS"),
             host=os.getenv("HOST"),
             port=os.getenv("API_PORT"),
+            keepalives=1,
+            keepalives_idle=30,
+            keepalives_interval=10,
+            keepalives_count=5
         )
         airflow_df = pd.read_sql(query, conn)
     except pg.DatabaseError:
