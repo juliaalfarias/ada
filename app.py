@@ -69,13 +69,13 @@ def retrieve_data_from_scheduling(
 
     query = build_query(**params)
 
-    database=os.getenv("DATABASE"),
+    dbname=os.getenv("DATABASE"),
     user=os.getenv("USER"),
     password=os.getenv("PASS"),
     host=os.getenv("HOST"),
     port=os.getenv("API_PORT")
 
-    conn_string="host={0} user={1} database={2} password={3} port={4}".format(host, user, database, password, port)
+    conn_string="host={0} user={1} database={2} password={3} port={4}".format(host, user, dbname, password, port)
 
     try:
         # conn = pg.connect(
