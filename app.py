@@ -69,18 +69,24 @@ def retrieve_data_from_scheduling(
 
     query = build_query(**params)
 
+    database=os.getenv("DATABASE"),
+    user=os.getenv("USER"),
+    password=os.getenv("PASS"),
+    host=os.getenv("HOST"),
+    port=os.getenv("API_PORT")
+
+    conn_string="host={0} user={1} database={2} password={3} port={4}".format(host, user, database, password, port)
+
     try:
-        conn = pg.connect(
-            database=os.getenv("DATABASE"),
-            user=os.getenv("USER"),
-            password=os.getenv("PASS"),
-            host=os.getenv("HOST"),
-            port=os.getenv("API_PORT"),
-            keepalives=1,
-            keepalives_idle=130,
-            keepalives_interval=10,
-            keepalives_count=15
-        )
+        # conn = pg.connect(
+        #     database=os.getenv("DATABASE"),
+        #     user=os.getenv("USER"),
+        #     password=os.getenv("PASS"),
+        #     host=os.getenv("HOST"),
+        #     port=os.getenv("API_PORT"),
+        # )
+        conn = pg.connect(conn_string)
+        app.logger.info("Connection established")
         airflow_df = pd.read_sql(query, conn)
     except pg.DatabaseError:
         raise pg.DatabaseError
