@@ -5,7 +5,7 @@ import pandas as pd
 from pandas.core.frame import DataFrame
 import psycopg2 as pg
 from cryptography.fernet import Fernet, InvalidToken
-from flask import Flask, request, Response
+from flask import Flask, request, Response, jsonify
 from flask_restful import Api
 from http import HTTPStatus
 
@@ -138,6 +138,10 @@ def task_id(task_id=None):
 def page_not_found(e):
     return error_handler("Route not found.", HTTPStatus.NOT_FOUND)
 
+@app.route("/health")
+def health():
+    state = {"status": "UP"}
+    return jsonify(state)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=7000, debug=True)
