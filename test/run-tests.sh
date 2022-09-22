@@ -6,5 +6,6 @@ python3 -m pip install -r requirements.txt
 
 python3 -m pip install pytest
 python3 -m pip install pytest-cov
-python3 -m pip install cryptography
+python3 -m pip install cryptography==38.0.1
+
 pytest
