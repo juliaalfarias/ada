@@ -1,1 +1,5 @@
-pytest tests/
+#!/bin/bash
+
+set -e
+
+pytest
