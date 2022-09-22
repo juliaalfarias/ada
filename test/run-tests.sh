@@ -2,5 +2,5 @@
 
 set -e
 
-pip install -U pytest
+python3 -m pip install pytest
 pytest
